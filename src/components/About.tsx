@@ -1,7 +1,7 @@
 const About = () => {
     return (
         <section>
-            <p>Software engineer student. Inspired by the possibilites of technology and constantly learning</p>
+            <p>Software engineer student. Not yet a pro, but willing to learn.</p>
         </section>
     )
 }

@@ -2,8 +2,8 @@
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #121212; /* Dark background */
-  color: white; /* Light text */
+  background-color: #121f31c3; /* Dark background */
+  color: #abb2bf; /* Light text color for readability */
 }
 
 a {
@@ -26,5 +26,44 @@ button {
 button:hover {
   background-color: #0a58ca; /* A darker blue for hover state */
 }
+
+.ticTacToeGame .board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+  max-width: 300px;
+  margin: auto;
+}
+
+.ticTacToeGame .cell {
+  width: 100px;
+  height: 100px;
+  color: #abb2bf;
+  background-color: #282c34; /* Dark background for code-style */
+  border: 1px #abb2bf solid;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.ticTacToeGame .winnerMessage {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.promptBox, .nicknameInput, .postGame {
+  background-color: #282c34;
+  color: #abb2bf;
+  font-family: 'Courier New', monospace;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.nicknameInput input {
+  margin: 10px 0;
+}
+
+
 
 

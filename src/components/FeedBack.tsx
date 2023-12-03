@@ -1,8 +1,8 @@
-const GuestBook = () => {
+const FeedBack = () => {
     return (
         <section>
         </section>
     )
 }
 
-export default GuestBook
+export default FeedBack

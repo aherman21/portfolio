@@ -1,0 +1,95 @@
+/* styles/FeedBackForm.css */
+.formWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    color: #abb2bf;
+}
+.formField {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #ffffff;
+    color: #abb2bf; /* Light text color for readability */
+    padding: 8px 16px;
+    margin: 8px 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .formField:focus {
+    outline: none;
+    border-bottom-color: #0a58ca; /* Or any color that fits your theme */
+  }
+  
+  .formField:hover {
+    border-bottom-color: #294269 ; /* Lighter blue for hover state */
+  }
+  
+  .formButton {
+    background-color: #0d6efd; /* Bootstrap primary blue for buttons */
+    color: #abb2bf; /* Light text color for readability */
+    border: none;
+    padding: 8px 16px;
+    margin-top: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease; /* Smooth transition for button background */
+  }
+  
+  
+  .formButton:hover {
+    background-color: #294269; /* Darker blue for hover state */
+  }
+  
+  .formButton:active {
+    background-color: #083c74; /* Even darker blue for active state */
+  }
+  
+  .formButton:focus {
+    outline: none; /* Optional: removes the outline on focus */
+  }
+
+  .formLabel {
+    color: #abb2bf; /* Light text color for readability */
+    font-weight: bold;
+    margin-bottom: 8px; /* Spacing below label */
+    display: block; /* Ensures label takes its own line */
+    }
+
+    .fieldGroup {
+    margin-bottom: 16px; /* Space between each field group */
+    }
+
+    .contactSection {
+      text-align: center; /* Center the button if desired */
+      padding: 20px; /* Add some padding around the section */
+  }
+  
+  .contactButton {
+      background-color: #4a74b3; /* Bootstrap primary blue */
+      color: #abb2bf; 
+      padding: 10px 20px;
+      text-decoration: none; /* Removes underline from the link */
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+  
+      /* Add a hover effect */
+      &:hover {
+          background-color: #294269;
+          color: #abb2bf;
+      }
+  
+      /* Add a focus effect */
+      &:focus {
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.5);
+      }
+  }
+  
+
+  

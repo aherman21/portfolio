@@ -17,14 +17,8 @@ const TicTacToeGame = () => {
         }
     }, [isPlayerNext, winner]);
 
-    const makeAIMove = () => {
-        let availablePositions = board.map((item, idx) => item === null ? idx : null).filter(item => item !== null);
-        
-        if (availablePositions.length === 0) return;
-        
-        let randomMove = availablePositions[Math.floor(Math.random() * availablePositions.length)];
-        makeMove(randomMove, 'O');
-    };
+    
+    
 
     const handleClick = (index: number) => {
         if (winner || board[index]) return;
@@ -50,32 +44,68 @@ const TicTacToeGame = () => {
         }
     };
 
+    const lines = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
+        [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns
+        [0, 4, 8], [2, 4, 6]             // diagonals
+    ];
+
     const checkWinner = (board: any[]) => {
-        const lines = [
-            [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
-            [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns
-            [0, 4, 8], [2, 4, 6]             // diagonals
-        ];
+        let foundWinner = null;
+        
 
         for (let line of lines) {
             const [a, b, c] = line;
             if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-                setWinner(board[a]);
+                foundWinner = board[a];
                 break;
             }
         }
 
-        if (winner) {
-            if (winner === 'X') { //player wins
+        if (foundWinner) {
+            setWinner(foundWinner)
+            if (foundWinner === 'X') { //player wins
                 setConsecutiveWins(consecutiveWins + 1);
                 setTimeout(resetBoard, 2000) //reset board after 2 seconds
-            } else if (winner === 'O') { //AI wins
+            } else if (foundWinner === 'O') { //AI wins
                 setTimeout(() => setGameStage('postGame'), 2000) //go to postgame after 2 seconds
             }
         } else if (!board.includes(null)) { //draw
             setTimeout(resetBoard, 2000) //reset board after 2 seconds
         }
     };
+
+    const makeAIMove = () => {
+        let move = findWinningMove('O') || findWinningMove('X') || playCenter() || findRandomMove();
+        makeMove(move, 'O');
+    };
+
+    const findWinningMove = (player: string) => {
+        for (let line of lines) {
+            const [a, b, c] = line;
+            if (board[a] === player && board[a] === board[b] && !board[c]) {
+                return c;
+            }
+            if (board[a] === player && board[a] === board[c] && !board[b]) {
+                return b;
+            }
+            if (board[b] === player && board[b] === board[c] && !board[a]) {
+                return a;
+            }
+        }
+        return null;
+    };
+
+    const findRandomMove = () => {
+        let availablePositions = board.map((item, idx) => item === null ? idx : null).filter(item => item !== null);
+        return availablePositions.length > 0
+            ? availablePositions[Math.floor(Math.random() * availablePositions.length)]
+            : null;
+    };
+
+    const playCenter = () => {
+        return board[4] === null ? 4 : null;
+    }
 
 
     const renderCell = (_index: any) => {
@@ -123,6 +153,7 @@ const TicTacToeGame = () => {
             <div className="board">
                 {Array(9).fill(null).map((_, index) => renderCell(index))}
             </div>
+            <p>Consecutive wins</p>{consecutiveWins}
         </div>
     );
 

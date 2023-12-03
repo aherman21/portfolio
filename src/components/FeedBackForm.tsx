@@ -5,10 +5,8 @@ interface FeedBackFormProps {
     addLog: (event: React.FormEvent<HTMLFormElement>) => void
     newName: string
     newMessage: string
-    newCompanyName: string
     handleNameChange: (event: React.ChangeEvent<HTMLInputElement>) => void
     handleMessageChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-    handleCompanyNameChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 const FeedBackForm: React.FC<FeedBackFormProps> = (props) => {
@@ -26,6 +24,14 @@ const FeedBackForm: React.FC<FeedBackFormProps> = (props) => {
                     id="message"
                     value={props.newMessage}
                     onChange={props.handleMessageChange}
+                    placeholder="Type your feedback here"
+                />
+                <input
+                    className="formField"
+                    id="name"
+                    value={props.newName}
+                    onChange={props.handleNameChange}
+                    placeholder="This is optional but you can type your name here"
                 />
             </div>
             <button className="formButton" type="submit">Submit</button>

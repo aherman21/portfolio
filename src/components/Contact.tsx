@@ -5,7 +5,7 @@ import '../styles/FeedBackForm.css'
 const Contact = () => {
     return (
       <section className='contactSection'>
-        <a href="mailto:hermansalexander2@gmail.com" className='contactButton'>Contact Me</a>
+        <a href="mailto:hermansalexander2@gmail.com" className='formButton'>Contact Me</a>
       </section>
     );
   };

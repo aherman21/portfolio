@@ -14,20 +14,35 @@ a:hover {
   color: #0a58ca; /* A darker blue for hover state */
 }
 
-button {
-  background-color: #0d6efd; /* Bootstrap primary blue for buttons */
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  cursor: pointer;
+
+
+.button {
+  background-color: #61dafb; /* Light blue color matching the appLink */
+  color: #282c34; /* Dark text color for contrast */
+  border: none; /* No border for a modern look */
+  padding: 10px 20px; /* Adequate padding for comfortable click */
+  margin-inline-end: 10px;
+  border-radius: 8px; /* Rounded corners to match the codeContainer style */
+  font-family: 'Courier New', Courier, monospace; /* Consistent font style */
+  text-transform: uppercase; /* Uppercase text for a distinctive look */
+  cursor: pointer; /* Changes cursor to indicate button functionality */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
 }
 
 button:hover {
-  background-color: #0a58ca; /* A darker blue for hover state */
+  background-color: #4a90e2; /* Slightly darker shade of blue for hover state */
+  color: #ffffff; /* White text color on hover for better visibility */
+}
+
+button:disabled {
+  background-color: #61dafb; /* Light blue color matching the appLink */
+  color: #282c34; /* Dark text color for contrast */
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .ticTacToeGame .board {
+  align-items: center;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 5px;

@@ -3,12 +3,13 @@ import '../styles/index.css';
 
 const TicTacToeGame = () => {
     const [gameStage, setGameStage] = useState('preGame');
-    const [nickName, setNickName] = useState('Your Nickname');
+    const [nickName, setNickName] = useState('');
     const [consecutiveWins, setConsecutiveWins] = useState(0);
     const initialBoard = Array(9).fill(null);
     const [board, setBoard] = useState(initialBoard);
     const [isPlayerNext, setIsPlayerNext] = useState(true);
     const [winner, setWinner] = useState(null);
+    const [showTie, setShowTie] = useState(false);
 
     useEffect(() => {
         // Check if it's AI's turn and the game is still ongoing
@@ -70,8 +71,12 @@ const TicTacToeGame = () => {
             } else if (foundWinner === 'O') { //AI wins
                 setTimeout(() => setGameStage('postGame'), 2000) //go to postgame after 2 seconds
             }
-        } else if (!board.includes(null)) { //draw
-            setTimeout(resetBoard, 2000) //reset board after 2 seconds
+        } else if (!board.includes(null)) { //tie condition
+            setShowTie(true);
+            setTimeout(() => {
+                setShowTie(false);
+                resetBoard();
+            }, 2000) //reset board after 2 seconds
         }
     };
 
@@ -97,7 +102,7 @@ const TicTacToeGame = () => {
     };
 
     const findRandomMove = () => {
-        let availablePositions = board.map((item, idx) => item === null ? idx : null).filter(item => item !== null);
+        let availablePositions = board.map((item: null, idx: any) => item === null ? idx : null).filter((item: null) => item !== null);
         return availablePositions.length > 0
             ? availablePositions[Math.floor(Math.random() * availablePositions.length)]
             : null;
@@ -121,14 +126,17 @@ const TicTacToeGame = () => {
     };
 
     const handleNickNameSubmit = () => {
+        if (nickName === '') {
+            alert('Please enter a name to start the game');
+        }
         setGameStage('inGame');
     }
 
     const renderPreGame = () => (
         <div className='promptBox'>
             <p>Do you want to play a game?</p>
-            <button onClick={startGame}>Yes</button>
-            <button onClick={startGame}>Of course</button>
+            <button className='button' onClick={startGame}>Yes</button>
+            <button className='button' onClick={startGame}>Of course</button>
         </div>
     );
     
@@ -136,13 +144,19 @@ const TicTacToeGame = () => {
     
     const renderNickNameInput = () => (
         <div className="nicknameInput">
-            <h1>Enter your playername:</h1>
+            <h1>Enter your player name:</h1>
             <input
                  type="text" 
+                 placeholder='Type your name here'
                  value={nickName} 
-                 onChange={(e) => setNickName(e.target.value)} 
+                 onChange={(e: { target: { value: any; }; }) => setNickName(e.target.value)} 
             />
-            <button onClick={handleNickNameSubmit}>Start Game</button>
+            <button 
+                className='button' 
+                onClick={handleNickNameSubmit}
+                disabled={!nickName.trim()}
+                >
+                    Start Game</button>
         </div>
     );
     
@@ -152,6 +166,7 @@ const TicTacToeGame = () => {
         <div className="ticTacToeGame">
             <div className="board">
                 {Array(9).fill(null).map((_, index) => renderCell(index))}
+                {showTie && <p>Tie!</p>}
             </div>
             <p>Consecutive wins</p>{consecutiveWins}
         </div>

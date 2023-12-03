@@ -48,9 +48,9 @@ const App: React.FC = () => {
       <Header />
       <About />
       <Contact />
-      <TicTacToeGame />
       <InfoTechAndInterests />
       <Contact />
+      <TicTacToeGame />
       <AppShowcase />
       <FeedBack />
       <FeedBackForm

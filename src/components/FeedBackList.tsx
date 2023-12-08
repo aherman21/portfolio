@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Feedback from './FeedBack.tsx';
 import '../styles/InfoTechAndInterests.css';
 
@@ -7,6 +7,7 @@ interface FeedbackData {
     message: string;
     name: string;
     date: Date;
+    isPublic: boolean
 }
 
 interface FeedbackListProps {
@@ -16,13 +17,14 @@ interface FeedbackListProps {
 
 const FeedbackList: React.FC<FeedbackListProps> = ({ feedbacks, onDelete }) => {
   return (
-    <div>
+    <div className='container'>
       {feedbacks.map((feedback) => (
         <Feedback
           key={feedback.id}
           message={feedback.message}
           name={feedback.name}
           date={feedback.date}
+          isPublic={feedback.isPublic}
           onDelete={() => onDelete(feedback.id)}
         />
       ))}

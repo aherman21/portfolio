@@ -1,22 +1,106 @@
 {
   "feedbacks": [
     {
-      "id": 2,
-      "message": "Thanks for the help!",
-      "name": "Jane Smith",
-      "date": "2023-01-02"
+      "id": 1702040689696,
+      "name": "moimoi",
+      "message": "aaa",
+      "date": "2023-12-08T13:04:49.696Z"
     },
     {
-      "id": 1701626152680,
-      "name": "joe",
-      "message": "very ok ",
-      "date": "2023-12-03T17:55:52.680Z"
+      "id": 1702040698528,
+      "name": "aasfasf",
+      "message": "waw",
+      "date": "2023-12-08T13:04:58.528Z"
     },
     {
-      "id": 1701627222159,
-      "name": "",
-      "message": "En halua kirjoittaa nimeä",
-      "date": "2023-12-03T18:13:42.159Z"
+      "id": 1702040740128,
+      "name": "hei",
+      "message": "aa",
+      "date": "2023-12-08T13:05:40.128Z"
+    },
+    {
+      "id": 1702040787794,
+      "name": "mikko",
+      "message": "asdasd",
+      "date": "2023-12-08T13:06:27.794Z"
+    },
+    {
+      "id": 1702040853143,
+      "name": "Kari",
+      "message": "No aika tönkkö softa hei :D",
+      "date": "2023-12-08T13:07:33.143Z"
+    },
+    {
+      "id": 1702041641341,
+      "name": "olli",
+      "message": "aaa",
+      "date": "2023-12-08T13:20:41.341Z",
+      "isPublic": true
+    },
+    {
+      "id": 1702041656608,
+      "name": "hihiihih",
+      "message": "tämä ei näy",
+      "date": "2023-12-08T13:20:56.608Z",
+      "isPublic": false
+    },
+    {
+      "id": 1702042981993,
+      "name": "Jaakko",
+      "message": "Erittäin hieno sivusto hermanni",
+      "date": "2023-12-08T13:43:01.993Z",
+      "isPublic": true
+    },
+    {
+      "id": 1702044628969,
+      "name": "Mirka",
+      "message": "Sivuston tyyli on hieno, koodaaja teemainen. Hieman jäin ihmettelemään mikä tarkoitus tuolla ristinolla pelillä on? Siihen kun siais toiminnalisuuden esim high score voisi olla hyvä ;)",
+      "date": "2023-12-08T14:10:28.969Z",
+      "isPublic": true
+    },
+    {
+      "id": 1702044946949,
+      "name": "testi",
+      "message": "lol ",
+      "date": "2023-12-08T14:15:46.949Z",
+      "isPublic": false
+    }
+  ],
+  "highScores": [
+    {
+      "nickName": "asdads",
+      "score": 1,
+      "id": 1
+    },
+    {
+      "nickName": "testi",
+      "score": 3,
+      "id": 2
+    },
+    {
+      "nickName": "testi2",
+      "score": 2,
+      "id": 3
+    },
+    {
+      "nickName": "testi2jj",
+      "score": 1,
+      "id": 4
+    },
+    {
+      "nickName": "ppppp",
+      "score": 1,
+      "id": 5
+    },
+    {
+      "nickName": "ppppp",
+      "score": 0,
+      "id": 6
+    },
+    {
+      "nickName": "ppppp2",
+      "score": 4,
+      "id": 7
     }
   ]
 }

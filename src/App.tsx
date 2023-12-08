@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 import About from "./components/About"
 import Contact from "./components/Contact"
-import FeedBack from "./components/FeedBack"
 import FeedBackList from "./components/FeedBackList"
 import Header from "./components/Header"
 import './styles/index.css'
@@ -17,6 +16,7 @@ interface FeedbackData {
   name: string;
   message: string;
   date: Date;
+  isPublic: boolean
 }
 
 
@@ -25,6 +25,7 @@ const App: React.FC = () => {
   const [newName, setNewName] = useState("")
   const [newMessage, setNewMessage] = useState("")
   const [feedbacks, setFeedbacks] = useState<FeedbackData[]>([])
+  const [checkPublic, setCheckPublic] = useState(true)
 
 
   useEffect(() => {
@@ -45,6 +46,10 @@ const App: React.FC = () => {
     setNewMessage(event.target.value)
   }
 
+  const handlePublicChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCheckPublic(event.target.checked)
+  }
+
   const handleDelete = async (feedbackId: number) => {
     try {
       await deleteFeedback(feedbackId);
@@ -62,6 +67,7 @@ const App: React.FC = () => {
       name: newName,
       message: newMessage,
       date: new Date(),
+      isPublic: checkPublic,
     }
     try {
 
@@ -91,8 +97,11 @@ const App: React.FC = () => {
         addLog={addLog}
         newName={newName}
         newMessage={newMessage}
+        checkPublic={checkPublic}
         handleNameChange={handleNameChange}
         handleMessageChange={handleMessageChange}
+        handlePublicChange={handlePublicChange}
+
       />
       <FeedBackList 
         feedbacks={feedbacks}

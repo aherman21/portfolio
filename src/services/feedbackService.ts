@@ -5,6 +5,7 @@ interface FeedbackData {
   message: string;
   name: string;
   date: Date;
+  isPublic: boolean
 }
 
 const API_URL = 'http://localhost:3001/feedbacks';

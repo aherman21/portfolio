@@ -13,7 +13,9 @@ const InfoTechAndInterests = () => {
     'Express':'Familiar',
     'MongoDB':'Familiar',
     'SQL':'Familiar',
+    'Expo':'Familiar',
     'Git':'Basic',
+    
 };
 
 const softSkills = {

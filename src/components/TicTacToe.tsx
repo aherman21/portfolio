@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import '../styles/index.css';
+import { fetchHighScores, addNewHighScore } from '../services/highScoreService';
+import { HighScore } from '../types/types';
 
 const TicTacToeGame = () => {
     const [gameStage, setGameStage] = useState('preGame');
@@ -10,6 +12,7 @@ const TicTacToeGame = () => {
     const [isPlayerNext, setIsPlayerNext] = useState(true);
     const [winner, setWinner] = useState(null);
     const [showTie, setShowTie] = useState(false);
+    const [highScores, setHighScores] = useState<HighScore[]>([])
 
     useEffect(() => {
         // Check if it's AI's turn and the game is still ongoing
@@ -18,6 +21,35 @@ const TicTacToeGame = () => {
         }
     }, [isPlayerNext, winner]);
 
+    //fetch high scores
+    const loadHighScores = async () => {
+        let scores = await fetchHighScores()
+        scores = scores.sort((a: HighScore, b: HighScore) => b.score - a.score)
+        setHighScores(scores)
+    }
+
+    useEffect(() => {
+    
+        loadHighScores()
+    }, [])
+
+    // rendering high scores
+
+    const renderHighScores = () => (
+        <div>
+            <h2>High Scores</h2>
+            <ul className='highScoresList'>
+                {highScores.map((score, index) => (
+                    <li key={index} className='highScoreItem'>
+                        <span className='rank'>{index + 1}.</span>
+                        <span className='name'>{score.nickName}:</span>
+                        {score.score}
+                    </li>
+                ))}
+            </ul>
+            <button className='button' onClick={handleResetGame}>Reset Game</button>
+        </div>
+    )
     
     
 
@@ -51,10 +83,12 @@ const TicTacToeGame = () => {
         [0, 4, 8], [2, 4, 6]             // diagonals
     ];
 
-    const checkWinner = (board: any[]) => {
+
+    // check the winner, apply updateHighScores and set the board as should
+
+    const checkWinner = async (board: any[]) => {
         let foundWinner = null;
         
-
         for (let line of lines) {
             const [a, b, c] = line;
             if (board[a] && board[a] === board[b] && board[a] === board[c]) {
@@ -68,7 +102,8 @@ const TicTacToeGame = () => {
             if (foundWinner === 'X') { //player wins
                 setConsecutiveWins(consecutiveWins + 1);
                 setTimeout(resetBoard, 2000) //reset board after 2 seconds
-            } else if (foundWinner === 'O') { //AI wins
+            } else if (foundWinner === 'O') { //AI wins, end game and send scores to db
+                await addNewHighScore({ nickName, score: consecutiveWins })
                 setTimeout(() => setGameStage('postGame'), 2000) //go to postgame after 2 seconds
             }
         } else if (!board.includes(null)) { //tie condition
@@ -132,11 +167,21 @@ const TicTacToeGame = () => {
         setGameStage('inGame');
     }
 
+    const handleResetGame = () => {
+        resetBoard()
+        setConsecutiveWins(0)
+        setGameStage('preGame')
+    }
+
+    const handleHighScores = () => {
+        loadHighScores()
+        setGameStage('highScores')
+    }
+
     const renderPreGame = () => (
         <div className='promptBox'>
             <p>Do you want to play a game?</p>
             <button className='button' onClick={startGame}>Yes</button>
-            <button className='button' onClick={startGame}>Of course</button>
         </div>
     );
     
@@ -176,15 +221,18 @@ const TicTacToeGame = () => {
         <div className="postGame">
             <p>Game Over! Your consecutive wins: {consecutiveWins}</p>
             {/*highscore display coming later */}
+            <button className='button' onClick={handleResetGame}>Reset Game</button>
+            <button className='button' onClick={handleHighScores}>Show High Scores</button>
         </div>
     );
 
     return (
-        <div>
+        <div className='container'>
             {gameStage === 'preGame' && renderPreGame()}
             {gameStage === 'nickName' && renderNickNameInput()}
             {gameStage === 'inGame' && renderGame()}
             {gameStage === 'postGame' && renderPostGame()}
+            {gameStage === 'highScores' && renderHighScores()}
         </div>
     )
 };

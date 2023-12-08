@@ -5,8 +5,10 @@ interface FeedBackFormProps {
     addLog: (event: React.FormEvent<HTMLFormElement>) => void
     newName: string
     newMessage: string
+    checkPublic: boolean  // state for checking if the feedback can be displayed in the app
     handleNameChange: (event: React.ChangeEvent<HTMLInputElement>) => void
     handleMessageChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+    handlePublicChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 const FeedBackForm: React.FC<FeedBackFormProps> = (props) => {
@@ -33,6 +35,17 @@ const FeedBackForm: React.FC<FeedBackFormProps> = (props) => {
                     onChange={props.handleNameChange}
                     placeholder="This is optional but you can type your name here"
                 />
+                <label htmlFor='isPublic' className='formLabel'>
+                <br/>
+                <input
+                    type='checkbox'
+                    id='isPublic'
+                    checked={props.checkPublic}
+                    onChange={props.handlePublicChange}
+                />
+                Check this box if you want the feedback to be public
+                
+                </label>
             </div>
             <button className="formButton" type="submit">Submit</button>
         </form>

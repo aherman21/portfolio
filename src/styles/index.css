@@ -14,6 +14,10 @@ a:hover {
   color: #0a58ca; /* A darker blue for hover state */
 }
 
+.container {
+  align-items: center;
+  max-width: 30%;
+}
 
 
 .button {
@@ -79,6 +83,46 @@ button:disabled {
   margin: 10px 0;
 }
 
+.highScoresContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align items horizontally */
+  width: 100%; /* Full width of the parent */
+  max-width: 600px; /* Maximum width of the container */
+  margin: auto; /* Center the container */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+  border-radius: 8px; /* Match your style's border radius */
+  background-color: #282c34; /* Dark background from your style */
+}
+
+.highScoresList {
+  width: 100%; /* Full width of the container */
+  list-style-type: none; /* No bullet points */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.highScoreItem {
+  color: #61dafb; /* Light blue color for text */
+  font-family: 'Courier New', Courier, monospace; /* Monospace font */
+  padding: 10px 0; /* Padding on top and bottom */
+  border-bottom: 1px solid #abb2bf; /* Separator between items */
+}
+
+.highScoreItem:last-child {
+  border-bottom: none; /* No border for the last item */
+}
+
+.highScoreItem span.rank {
+  color: #e06c75; /* Highlight color for the rank */
+  font-weight: bold; /* Making the rank number bold */
+  margin-right: 10px; /* Space between rank and name */
+}
+
+.highScoreItem span.name {
+  margin-right: 5px; /* Space between name and score */
+}
 
 
 

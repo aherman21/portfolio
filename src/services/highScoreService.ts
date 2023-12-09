@@ -2,7 +2,7 @@ import axios from "axios";
 import { HighScore } from "../types/types";
 
 // getting scores from db
-const url = 'http://localhost:3002/api/highScores'
+const url = 'http://localhost:3001/highScores'
 
 export const fetchHighScores = async () => {
     try {

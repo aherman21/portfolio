@@ -8,21 +8,21 @@ interface FeedbackData {
   isPublic: boolean
 }
 
-const API_URL = 'http://localhost:3002/api/feedbacks';
+const url = 'http://localhost:3001/feedbacks';
 
 // Function to get all feedbacks
 export const getAllFeedbacks = async (): Promise<FeedbackData[]> => {
-  const response = await axios.get<FeedbackData[]>(API_URL);
+  const response = await axios.get<FeedbackData[]>(url);
   return response.data;
 };
 
 // Function to add a new feedback
 export const addFeedback = async (newFeedback: FeedbackData): Promise<FeedbackData> => {
-  const response = await axios.post<FeedbackData>(API_URL, newFeedback);
+  const response = await axios.post<FeedbackData>(url, newFeedback);
   return response.data;
 };
 
 // Function to delete a feedback
 export const deleteFeedback = async (id: number): Promise<void> => {
-  await axios.delete(`${API_URL}/${id}`);
+  await axios.delete(`${url}/${id}`);
 };

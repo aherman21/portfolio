@@ -8,9 +8,9 @@ const AppShowcase = () => {
     const thisIsLink = "//the header above is a link"
 
     return (
-        <div className="infoContainer">
+        <div className="container">
             <h1 className="variable">Projects</h1>
-            <div className="codeContainer">
+            <div className="codeContainer_fb">
                 <pre>
                     <code>
                         <a href={appLinks[0]} target="_blank" rel="noopener noreferrer" className="appLink">
@@ -18,10 +18,10 @@ const AppShowcase = () => {
                         </a>
                         <p>{thisIsLink}</p>
                         <span className="variable">appDescription</span> = 
-                        <span className="appDescription"> '{appDescriptions[0]}'</span>;
+                        <span className="appDescription"><p>'{appDescriptions[0]}'</p></span>;
                         <br />
                         <span className='variable'>contributions</span> = 
-                        <span className="appDescription"> '{contributions[0]}'</span>;
+                        <span className="appDescription"><p>'{contributions[0]}'</p></span>;
 
                         <br />
                     </code>

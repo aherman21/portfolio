@@ -213,7 +213,8 @@ const TicTacToeGame = () => {
                 {Array(9).fill(null).map((_, index) => renderCell(index))}
                 {showTie && <p>Tie!</p>}
             </div>
-            <p>Consecutive wins</p>{consecutiveWins}
+            <p>Total wins {consecutiveWins}</p>
+            <p>Get as much as total wins as you can</p>
         </div>
     );
 

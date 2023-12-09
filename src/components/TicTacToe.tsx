@@ -36,7 +36,7 @@ const TicTacToeGame = () => {
     // rendering high scores
 
     const renderHighScores = () => (
-        <div>
+        <div className='postGame'>
             <h2>High Scores</h2>
             <ul className='highScoresList'>
                 {highScores.map((score, index) => (
@@ -219,16 +219,16 @@ const TicTacToeGame = () => {
     );
 
     const renderPostGame = () => (
-        <div className="postGame">
-            <p>Game Over! Your consecutive wins: {consecutiveWins}</p>
-            {/*highscore display coming later */}
-            <button className='button' onClick={handleResetGame}>Reset Game</button>
-            <button className='button' onClick={handleHighScores}>Show High Scores</button>
-        </div>
+            <div className="postGame">
+                <p>Game Over! Your consecutive wins: {consecutiveWins}</p>
+                {/*highscore display coming later */}
+                <button className='button' onClick={handleResetGame}>Reset Game</button>
+                <button className='button' onClick={handleHighScores}>Show High Scores</button>
+            </div>
     );
 
     return (
-        <div className='container'>
+        <div className='infoContainer'>
             {gameStage === 'preGame' && renderPreGame()}
             {gameStage === 'nickName' && renderNickNameInput()}
             {gameStage === 'inGame' && renderGame()}

@@ -2,7 +2,7 @@ import axios from "axios";
 import { HighScore } from "../types/types";
 
 // getting scores from db
-const url = 'http://localhost:3001/highScores'
+const url = 'http://localhost:3002/api/highScores'
 
 export const fetchHighScores = async () => {
     try {
@@ -24,28 +24,4 @@ export const addNewHighScore = async (newScore: HighScore) => {
     }
 };
 
-export const updateHighScores = async (newScore: HighScore) => {
-    try {
-        //fetches the current highscores to determine if we need to add the new score
-        const currentScoresResponse = await axios.get(url)
-        let currentScores = currentScoresResponse.data
 
-        // add the new score
-        currentScores.push(newScore)
-
-        //sort the scores
-        currentScores.sort((a: HighScore, b: HighScore) => b.score - a.score)
-
-        // Limit to top 30 scores
-        if (currentScores.length > 30) {
-            currentScores = currentScores.slice(0, 30)
-        }
-
-        // Post each score individually
-        for (const score of currentScores) {
-            await axios.post(url, score)
-        }
-    } catch (error) {
-        console.error('Error updating high scores', error)
-    }
-}

@@ -8,7 +8,7 @@ interface FeedbackData {
   isPublic: boolean
 }
 
-const API_URL = 'http://localhost:3001/feedbacks';
+const API_URL = 'http://localhost:3002/api/feedbacks';
 
 // Function to get all feedbacks
 export const getAllFeedbacks = async (): Promise<FeedbackData[]> => {

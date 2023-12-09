@@ -14,10 +14,6 @@ a:hover {
   color: #0a58ca; /* A darker blue for hover state */
 }
 
-.container {
-  align-items: center;
-  max-width: 30%;
-}
 
 
 .button {
@@ -55,8 +51,8 @@ button:disabled {
 }
 
 .ticTacToeGame .cell {
-  width: 100px;
-  height: 100px;
+  width: 91px;
+  height: 91px;
   color: #abb2bf;
   background-color: #282c34; /* Dark background for code-style */
   border: 1px #abb2bf solid;
@@ -67,6 +63,7 @@ button:disabled {
 .ticTacToeGame .winnerMessage {
   text-align: center;
   margin-top: 20px;
+
 }
 
 .promptBox, .nicknameInput, .postGame {
@@ -124,5 +121,47 @@ button:disabled {
   margin-right: 5px; /* Space between name and score */
 }
 
+.container {
+    width: 60%;
+}
+
+
+.infoContainer {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.codeContainer {
+    background-color: #282c34; /* Dark background for code-style */
+    color: #abb2bf; /* Light text color for readability */
+    font-family: 'Courier New', Courier, monospace; /* Monospace font */
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.codeContainer_fb {
+    background-color: #282c34; /* Dark background for code-style */
+    color: #abb2bf; /* Light text color for readability */
+    font-family: 'Courier New', Courier, monospace; /* Monospace font */
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    align-self: center;
+
+}
+
+.variable {
+    color: #e06c75; /* Highlight color for variables */
+}
+
+.appLink, .appDescription {
+    color: #61dafb; /* A light blue color, you can change it as needed */
+    text-decoration: none; /* Removes underline from the link */
+}
+
+.appLink:hover {
+    text-decoration: underline; /* Adds an underline on hover for the link */
+}
 
 

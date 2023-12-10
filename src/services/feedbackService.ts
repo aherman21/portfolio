@@ -9,7 +9,7 @@ interface FeedbackData {
   isPublic: boolean
 }
 
-const url = 'http://localhost:3001/feedbacks';
+const url = 'api/feedbacks';
 // when testing locally use this url: const url = 'http://localhost:3001/feedbacks';
 // when making a build use this url: const url = '/api/feedbacks';
 

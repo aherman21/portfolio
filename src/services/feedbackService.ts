@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// This interface Should be moved to types.ts
 interface FeedbackData {
   id: number;
   message: string;
@@ -8,7 +9,7 @@ interface FeedbackData {
   isPublic: boolean
 }
 
-const url = 'api/feedbacks';
+const url = 'http://localhost:3001/feedbacks';
 
 // Function to get all feedbacks
 export const getAllFeedbacks = async (): Promise<FeedbackData[]> => {

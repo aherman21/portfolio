@@ -16,6 +16,8 @@ interface FeedbackListProps {
 }
 
 const FeedbackList: React.FC<FeedbackListProps> = ({ feedbacks, onDelete }) => {
+  // create a copy of the feedbacks array and sort it by date
+  feedbacks.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   return (
     <div className='container'>
       {feedbacks.map((feedback) => (

@@ -48,6 +48,7 @@ const TicTacToeGame = () => {
                 ))}
             </ul>
             <button className='button' onClick={handleResetGame}>Reset Game</button>
+            <p># high scores are posted to and received from a mongoDB</p>
         </div>
     )
     

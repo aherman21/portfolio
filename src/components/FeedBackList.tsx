@@ -20,6 +20,9 @@ const FeedbackList: React.FC<FeedbackListProps> = ({ feedbacks, onDelete }) => {
   feedbacks.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   return (
     <div className='container'>
+      <div className='infoContainer'>
+      <p># feedbacks are posted to and retrieved from a MongoDB</p>
+      </div>
       {feedbacks.map((feedback) => (
         <Feedback
           key={feedback.id}

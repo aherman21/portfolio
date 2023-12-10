@@ -1,6 +1,8 @@
+import "../styles/index.css"
+
 const About = () => {
     return (
-        <section>
+        <section className="infoContainer">
             <p>Software engineer student. Not yet a pro, but willing to learn.</p>
         </section>
     )

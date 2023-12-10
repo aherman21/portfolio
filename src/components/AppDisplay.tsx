@@ -1,11 +1,11 @@
 
-import '../styles/InfoTechAndInterests.css'; // Reusing your existing CSS file
+import '../styles/index.css'; // Reusing your existing CSS file
 
 const AppShowcase = () => {
     const appLinks = ['https://play.google.com/store/apps/details?id=com.sahkotekniikka_2021&pli=1']; // Replace with your app's link
     const appDescriptions = ['React Native app for educational purposes.']
-    const contributions = [`Frontend development, UI&UX design. Communicating with PM and the customer.`]
-    const thisIsLink = "//the header above is a link"
+    const contributions = [`Frontend development, UI&UX design, Communicating with PM and the customer.`]
+    const thisIsLink = "# the header above is a link"
 
     return (
         <div className="container">
@@ -18,10 +18,10 @@ const AppShowcase = () => {
                         </a>
                         <p>{thisIsLink}</p>
                         <span className="variable">appDescription</span> = 
-                        <span className="appDescription"><p>'{appDescriptions[0]}'</p></span>;
+                        <span className="appDescription"><p>'{appDescriptions[0]}'</p></span>
                         <br />
                         <span className='variable'>contributions</span> = 
-                        <span className="appDescription"><p>'{contributions[0]}'</p></span>;
+                        <span className="appDescription"><p>'{contributions[0]}'</p></span>
 
                         <br />
                     </code>

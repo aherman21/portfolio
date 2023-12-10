@@ -1,6 +1,7 @@
 import React from "react"
-import '../styles/FeedBackForm.css'
+import '../styles/index.css'
 
+//move to type directory?
 interface FeedBackFormProps {
     addLog: (event: React.FormEvent<HTMLFormElement>) => void
     newName: string
@@ -11,6 +12,7 @@ interface FeedBackFormProps {
     handlePublicChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
+//form that asks for feedbacks
 const FeedBackForm: React.FC<FeedBackFormProps> = (props) => {
     return (
         <form 

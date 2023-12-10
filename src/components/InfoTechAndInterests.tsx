@@ -1,6 +1,6 @@
 
 import React from 'react';
-import '../styles/InfoTechAndInterests.css'; // Path to your CSS file
+import '../styles/index.css'; // Path to your CSS file
 
 const InfoTechAndInterests = () => {
     const techSkills = {
@@ -24,7 +24,7 @@ const softSkills = {
     'Problem Solving': 'Proficient',
 }
 
-    const personalInterests = ['Coffee', 'Movies', 'Gym', 'Cooking'];
+    const personalInterests = ['Coffee', 'Movies', 'Gym', 'Cooking']
 
     return (
         <div className="infoContainer">
@@ -39,7 +39,7 @@ const softSkills = {
                                 <br />
                             </React.Fragment>
                         ))}
-                        {'}'};
+                        {'}'}
                         <br />
                         <br />
                         <span className='variable'>softSkills</span> = {'{'}
@@ -50,10 +50,10 @@ const softSkills = {
                                 <br />
                             </React.Fragment>
                         ))}
-                        {'}'};
+                        {'}'}
                         <br />
                         <br />
-                        <span className="variable">personalInterests</span> = {JSON.stringify(personalInterests, null, 2)};
+                        <span className="variable">personalInterests</span> = {JSON.stringify(personalInterests, null, 2)}
                     </code>
                 </pre>
             </div>

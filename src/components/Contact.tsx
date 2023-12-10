@@ -1,4 +1,3 @@
-import '../styles/FeedBackForm.css'
 import '../styles/index.css'
 
 

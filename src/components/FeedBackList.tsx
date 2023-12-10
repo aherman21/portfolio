@@ -1,6 +1,6 @@
 import React from 'react';
 import Feedback from './FeedBack.tsx';
-import '../styles/InfoTechAndInterests.css';
+import '../styles/index.css';
 
 interface FeedbackData {
     id: number;

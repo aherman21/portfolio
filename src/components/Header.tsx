@@ -1,8 +1,8 @@
-import 'react'
+
 
 const Header = () => {
     return (
-        <header>
+        <header className="infoContainer">
         <nav>
             {/* Navigation Links */}
         </nav>

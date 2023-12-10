@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import '../styles/InfoTechAndInterests.css'; // Import your CSS file
+import '../styles/index.css';
 
+// this interface could be moved to the type directory maybe? 
 interface FeedbackProps {
         message: string;
         name: string;

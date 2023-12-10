@@ -1,5 +1,5 @@
 
-import '../styles/index.css'; // Reusing your existing CSS file
+import '../styles/index.css';
 
 const AppShowcase = () => {
     const appLinks = ['https://play.google.com/store/apps/details?id=com.sahkotekniikka_2021&pli=1']; // Replace with your app's link

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import About from "./components/About"
 import Contact from "./components/Contact"
+import Links from "./components/Links"
 import FeedBackList from "./components/FeedBackList"
 import Header from "./components/Header"
 import './styles/index.css'
@@ -89,6 +90,7 @@ const App: React.FC = () => {
       <Header />
       <About />
       <Contact />
+      <Links />
       <InfoTechAndInterests />
       <Contact />
       <TicTacToeGame />

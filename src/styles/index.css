@@ -259,3 +259,16 @@ button:disabled {
         box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.5);
     }
 }
+
+.linksContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Add any additional styling as needed */
+}
+
+.logo {
+  height: 50px; /* Set both logos to the same height */
+  margin: 10px;
+  width: auto; /* Maintain aspect ratio */
+}

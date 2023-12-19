@@ -9,7 +9,7 @@ interface FeedbackData {
   isPublic: boolean
 }
 
-const url = 'http://localhost:3001/feedbacks';
+const url = '/api/feedbacks';
 
 // when testing locally use this url: const url = 'http://localhost:3001/feedbacks';
 // then navigate to db folder and type json-server --watch db.json --port 3001

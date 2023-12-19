@@ -10,7 +10,10 @@ interface FeedbackData {
 }
 
 const url = 'http://localhost:3001/feedbacks';
+
 // when testing locally use this url: const url = 'http://localhost:3001/feedbacks';
+// then navigate to db folder and type json-server --watch db.json --port 3001
+
 // when making a build use this url: const url = '/api/feedbacks';
 
 

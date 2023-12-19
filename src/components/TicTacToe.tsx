@@ -192,6 +192,7 @@ const TicTacToeGame = () => {
         <div className="nicknameInput">
             <h1>Enter your player name:</h1>
             <input
+                className='formField'
                  type="text" 
                  placeholder='Type your name here'
                  value={nickName} 

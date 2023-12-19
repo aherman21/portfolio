@@ -153,6 +153,13 @@ button:disabled {
     color: #e06c75; /* Highlight color for variables */
 }
 
+.wrappingText {
+  white-space: normal; /* Allows text to wrap */
+  overflow-wrap: break-word; /* Ensures long words do not overflow */
+}
+
+
+
 .appLink, .appDescription {
     color: #61dafb; /* A light blue color, you can change it as needed */
     text-decoration: none; /* Removes underline from the link */

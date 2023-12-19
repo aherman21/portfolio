@@ -33,7 +33,7 @@ const AppShowcase = () => {
                          rel="noopener noreferrer" className="appLink">
                             <h2>Sähkötekniikka 2021</h2>
                         </a>
-                        <p>{thisIsLink}</p>
+                        <p className='wrappingText'>{thisIsLink}</p>
                         <span className="variable">appDescription</span> = 
                         <span className="appDescription"><p>'{appDescriptions[0]}'</p></span>
                         <br />
@@ -50,7 +50,7 @@ const AppShowcase = () => {
             <div className="codeContainer_fb">
                 <pre>
                     <code>
-                        <h2>Alexander's Portfolio</h2>
+                        <h2 className='wrappingText'>Alexander's Portfolio</h2>
                         <span className="variable">appDescription</span> = 
                         <span className="appDescription"><p>'{appDescriptions[1]}'</p></span>
                         <br />

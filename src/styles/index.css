@@ -100,7 +100,6 @@ button:disabled {
 
 .highScoreItem {
   color: #61dafb; /* Light blue color for text */
-  text-align: align-self; /* Align text to the left */
   font-family: monospace; /* Monospace font */
   padding: 10px 0; /* Padding on top and bottom */
   border-bottom: 1px solid #abb2bf; /* Separator between items */
